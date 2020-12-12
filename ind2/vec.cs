@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ind2
 {
-    class Vec3
+    public class Vec3
     {
         public double x, y, z;
         public Vec3(double x_, double y_, double z_)
@@ -41,24 +41,24 @@ namespace ind2
         {
             return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
         }
-        public static Vec3 operator ^(Vec3 v1, Vec3 v2)
-        {
-            return new Vec3(v1.y * v2.z - v1.z * v2.y, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y - v1.y * v2.x);
-        }
-        public double len()
+        public double Length()
         {
             return Math.Sqrt(this % this);
         }
+        public Vec3 normalize()
+        {
+            return this / Length();
+        }
         public static Vec3 operator !(Vec3 v)
         {
-            return v / v.len();
+            return v / v.Length();
         }
         public override string ToString()
         {
             return String.Format("{0}{1}, {2}, {3}{4}", "{", x, y, z, "}");
         }
     }
-    class Vec2
+    public class Vec2
     {
         public double x, y;
         public Vec2(double x_, double y_)
@@ -97,6 +97,28 @@ namespace ind2
         public override string ToString()
         {
             return String.Format("{0}{1}, {2}{4}", "{", x, y, "}");
+        }
+    }
+
+    public class Ray
+    {
+        public Vec3 origin;
+        public Vec3 direction;
+
+        public Ray()
+        {
+            origin = new Vec3();
+            direction = new Vec3();
+        }
+
+        public Ray(Vec3 _origin, Vec3 _dir)
+        {
+            origin = _origin;
+            direction = _dir;
+        }
+        public Vec3 Point(double t)
+        {
+            return origin + (direction * t);
         }
     }
 }

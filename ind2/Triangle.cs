@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ind2
 {
-    class Triangle
+    public class Triangle
     {
         public int v1, v2, v3;
         public int vt1, vt2, vt3;
