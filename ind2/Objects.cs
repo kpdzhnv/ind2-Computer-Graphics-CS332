@@ -15,7 +15,7 @@ namespace ind2
         public Vec3 p2;
         public Vec3 p3;
         public Vec3 p4;
-        Material material;
+        public Material material;
 
         public Wall(Vec3 _p1, Vec3 _p2, Vec3 _p3, Vec3 _p4, Material _material)
         {
@@ -38,7 +38,7 @@ namespace ind2
     {
         public double radius;
         public Vec3 center;
-        Material material;
+        public Material material;
 
         public Sphere(Vec3 _center, double _radius, Material _material)
         {
@@ -105,7 +105,7 @@ namespace ind2
 
         public List<Triangle> triangles = new List<Triangle>();
         public Vec3 center_point = new Vec3();
-        Material material;
+        public Material material;
 
         public Mesh(List<Vec3> vert, List<Triangle> triangles_, Material _material)
         {

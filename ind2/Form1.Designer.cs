@@ -38,7 +38,7 @@
             this.image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.image.Location = new System.Drawing.Point(40, 39);
             this.image.Name = "image";
-            this.image.Size = new System.Drawing.Size(2575, 1767);
+            this.image.Size = new System.Drawing.Size(1106, 685);
             this.image.TabIndex = 0;
             this.image.TabStop = false;
             this.image.Click += new System.EventHandler(this.image_Click);
